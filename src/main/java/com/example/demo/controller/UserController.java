@@ -45,4 +45,10 @@ public class UserController {
         userList.add(user);
         return userList;
     }
+    
+    @DeleteMapping("/{id}")
+    public List<User> deleteUser(@PathVariable int id) {
+        userList.remove(getUser(id));
+        return userList;
+    }
 }
