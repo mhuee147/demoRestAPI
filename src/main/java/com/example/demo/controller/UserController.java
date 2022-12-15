@@ -38,4 +38,11 @@ public class UserController {
         userList.add(user);
         return userList;
     }
+    @PutMapping("/{id}")
+    public List<User> updateUser (@PathVariable int id, @RequestBody User user) {
+        userList.remove(getUser(id));
+        user.setId(id);
+        userList.add(user);
+        return userList;
+    }
 }
